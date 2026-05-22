@@ -1,0 +1,36 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  font-family: 'Inter', system-ui, -apple-system, sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+body {
+  margin: 0;
+  background: linear-gradient(180deg, #f8fafc 0%, #eef2ff 100%);
+  min-height: 100vh;
+  color: #0f172a;
+}
+
+/* Лёгкая анимация для появления подсказки "скопировано" */
+@keyframes fadeInOut {
+  0% { opacity: 0; transform: translateY(4px); }
+  20%, 80% { opacity: 1; transform: translateY(0); }
+  100% { opacity: 0; transform: translateY(-4px); }
+}
+
+.copied-toast {
+  animation: fadeInOut 1.4s ease-in-out forwards;
+}
+
+/* Кастомный скроллбар для блоков с командами */
+.terminal-block::-webkit-scrollbar {
+  height: 6px;
+}
+.terminal-block::-webkit-scrollbar-thumb {
+  background: #334155;
+  border-radius: 3px;
+}
